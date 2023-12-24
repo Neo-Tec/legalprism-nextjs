@@ -1,113 +1,694 @@
-import Image from 'next/image'
+import { Contact } from "@/components/contact/contact";
+import Footer from "@/components/footer/footer";
+import { Nav } from "@/components/nav/nav";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="wrap">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 d-flex align-items-center">
+              <p className="mb-0 phone pl-md-2">
+                <a href="#" className="mr-2">
+                  <span className="fa fa-phone mr-1" /> +00 1234 567
+                </a>
+                <a href="#">
+                  <span className="fa fa-paper-plane mr-1" />{" "}
+                  youremail@email.com
+                </a>
+              </p>
+            </div>
+            <div className="col-md-6 d-flex justify-content-md-end">
+              <div className="social-media">
+                <p className="mb-0 d-flex">
+                  <a
+                    href="#"
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <span className="fa fa-facebook">
+                      <i className="sr-only">Facebook</i>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <span className="fa fa-twitter">
+                      <i className="sr-only">Twitter</i>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <span className="fa fa-instagram">
+                      <i className="sr-only">Instagram</i>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    className="d-flex align-items-center justify-content-center"
+                  >
+                    <span className="fa fa-dribbble">
+                      <i className="sr-only">Dribbble</i>
+                    </span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
+      <Nav />
+      {/* END nav */}
+      <div
+        className="hero-wrap"
+        style={{ backgroundImage: 'url("images/bg_1.jpg")' }}
+        data-stellar-background-ratio="0.5"
+      >
+        <div className="overlay" />
+        <div className="container">
+          <div className="row no-gutters slider-text align-items-center">
+            <div className="col-md-6 ftco-animate d-flex align-items-end">
+              <div className="text w-100">
+                <h1 className="mb-4">
+                  Don&#39;t Feel Helpless We Fight for Justice
+                </h1>
+                <p className="mb-4">
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+                <p>
+                  <a href="#" className="btn btn-primary py-3 px-4">
+                    Contact us
+                  </a>{" "}
+                  <a href="#" className="btn btn-white py-3 px-4">
+                    Read more
+                  </a>
+                </p>
+              </div>
+            </div>
+            <a
+              href="https://vimeo.com/45830194"
+              className="img-video popup-vimeo d-flex align-items-center justify-content-center"
+            >
+              <span className="fa fa-play" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <section className="ftco-intro">
+        <div className="container-fluid">
+          <div className="row no-gutters">
+            <div className="col-md-3 d-flex">
+              <div className="intro aside-stretch d-lg-flex w-100">
+                <div className="icon">
+                  <span className="flaticon-lawyer" />
+                </div>
+                <div className="text">
+                  <h2>Expert Attorneys</h2>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3 d-flex">
+              <div className="intro color-1 d-lg-flex w-100">
+                <div className="icon">
+                  <span className="flaticon-auction" />
+                </div>
+                <div className="text">
+                  <h2>Case Dismissed</h2>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3 d-flex">
+              <div className="intro color-2 d-lg-flex w-100">
+                <div className="icon">
+                  <span className="flaticon-court" />
+                </div>
+                <div className="text">
+                  <h2>Court Performance</h2>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-3 d-flex">
+              <div className="intro color-3 d-lg-flex w-100">
+                <div className="icon">
+                  <span className="flaticon-court" />
+                </div>
+                <div className="text">
+                  <h2>Court Performance</h2>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="ftco-section ftco-no-pb ftco-no-pt">
+        <div className="container">
+          <div className="row no-gutters">
+            <div className="col-md-6 d-flex align-items-stretch">
+              <div
+                className="img img-3 w-100 d-flex justify-content-center align-items-center"
+                style={{
+                  backgroundImage: "url(images/about-1.jpg)",
+                  position: "relative",
+                }}
+              >
+                <a
+                  href="https://vimeo.com/45830194"
+                  className="play-video popup-vimeo d-flex align-items-center justify-content-center"
+                >
+                  <span className="fa fa-play" />
+                </a>
+              </div>
+            </div>
+            <div className="col-md-6 wrap-about ftco-animate">
+              <div className="bg-light px-3 px-md-5 py-5 ">
+                <div className="heading-section">
+                  <span className="subheading">Welcome to Law Firm</span>
+                  <h2 className="mb-3">
+                    Why to Put Trust Your Trust In Law Firm
+                  </h2>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+                <div className="row">
+                  <div className="col-lg-6">
+                    <div className="services d-flex w-100">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-lawyer" />
+                      </div>
+                      <div className="text pl-2">
+                        <h2>Expert Attorneys</h2>
+                        <p>
+                          A small river named Duden flows by their place and
+                          supplies
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="services d-flex w-100">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-discount" />
+                      </div>
+                      <div className="text pl-2">
+                        <h2>Great Discount</h2>
+                        <p>
+                          A small river named Duden flows by their place and
+                          supplies
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="services d-flex w-100">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-auction" />
+                      </div>
+                      <div className="text pl-2">
+                        <h2>Legal Advisory</h2>
+                        <p>
+                          A small river named Duden flows by their place and
+                          supplies
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-lg-6">
+                    <div className="services d-flex w-100">
+                      <div className="icon d-flex align-items-center justify-content-center">
+                        <span className="flaticon-handcuffs" />
+                      </div>
+                      <div className="text pl-2">
+                        <h2>Quick Charges</h2>
+                        <p>
+                          A small river named Duden flows by their place and
+                          supplies
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        className="ftco-counter ftco-section ftco-no-pt mt-4 ftco-no-pb img"
+        id="section-counter"
+      >
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animate">
+              <div className="block-18 py-4 w-100">
+                <span className="icon flaticon-checklist" />
+                <div className="text align-items-center">
+                  <strong className="number" data-number={3000}>
+                    0
+                  </strong>
+                  <span>Trusted Clients</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animate">
+              <div className="block-18 py-4 w-100">
+                <span className="icon flaticon-checklist" />
+                <div className="text align-items-center">
+                  <strong className="number" data-number={1000}>
+                    0
+                  </strong>
+                  <span>Honor&#39;s &#39; Awards</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animate">
+              <div className="block-18 py-4 w-100">
+                <span className="icon flaticon-checklist" />
+                <div className="text align-items-center">
+                  <strong className="number" data-number={2000}>
+                    0
+                  </strong>
+                  <span>Expert Lawyers</span>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-6 col-lg-3 d-flex align-items-stretch counter-wrap ftco-animate">
+              <div className="block-18 py-4 w-100">
+                <span className="icon flaticon-checklist" />
+                <div className="text align-items-center">
+                  <strong className="number" data-number={10540}>
+                    0
+                  </strong>
+                  <span>Successful Cases</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="ftco-section">
+        <div className="container">
+          <div className="row justify-content-center pb-5">
+            <div className="col-md-7 heading-section text-center ftco-animate">
+              <span className="subheading">Practice Area</span>
+              <h2>What We Cover</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-stats" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-stats" />
+                  </div>
+                </div>
+                <h2>Business Law</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-family" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-family" />
+                  </div>
+                </div>
+                <h2>Family Law</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-handcuffs" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-handcuffs" />
+                  </div>
+                </div>
+                <h2>Criminal Law</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-stay-home" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-stay-home" />
+                  </div>
+                </div>
+                <h2>Real Estate Law</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-injury" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-injury" />
+                  </div>
+                </div>
+                <h2>Personal Injury</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex align-items-stretch ftco-animate">
+              <div className="services-2 text-center">
+                <div className="icon-wrap">
+                  <div className="mini-icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-auction" />
+                  </div>
+                  <div className="icon d-flex align-items-center justify-content-center">
+                    <span className="flaticon-auction" />
+                  </div>
+                </div>
+                <h2>Judicial Law</h2>
+                <p>
+                  A small river named Duden flows by their place and supplies it
+                  with the necessary regelialia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="ftco-section testimony-section">
+        <div
+          className="img img-bg"
+          style={{ backgroundImage: "url(images/bg_4.jpg)" }}
         />
+        <div className="overlay" />
+        <div className="container">
+          <div className="row justify-content-center mb-5">
+            <div className="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <span className="subheading">Testimonial</span>
+              <h2 className="mb-3">Happy Clients</h2>
+            </div>
+          </div>
+          <div className="row ftco-animate">
+            <div className="col-md-12">
+              <div className="carousel-testimony owl-carousel ftco-owl">
+                <div className="item">
+                  <div className="testimony-wrap py-4">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="fa fa-quote-left" />
+                    </div>
+                    <div className="text">
+                      <p className="mb-4">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts.
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <div
+                          className="user-img"
+                          style={{
+                            backgroundImage: "url(images/person_1.jpg)",
+                          }}
+                        />
+                        <div className="pl-3">
+                          <p className="name">Roger Scott</p>
+                          <span className="position">Marketing Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="testimony-wrap py-4">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="fa fa-quote-left" />
+                    </div>
+                    <div className="text">
+                      <p className="mb-4">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts.
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <div
+                          className="user-img"
+                          style={{
+                            backgroundImage: "url(images/person_2.jpg)",
+                          }}
+                        />
+                        <div className="pl-3">
+                          <p className="name">Roger Scott</p>
+                          <span className="position">Marketing Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="testimony-wrap py-4">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="fa fa-quote-left" />
+                    </div>
+                    <div className="text">
+                      <p className="mb-4">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts.
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <div
+                          className="user-img"
+                          style={{
+                            backgroundImage: "url(images/person_3.jpg)",
+                          }}
+                        />
+                        <div className="pl-3">
+                          <p className="name">Roger Scott</p>
+                          <span className="position">Marketing Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="testimony-wrap py-4">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="fa fa-quote-left" />
+                    </div>
+                    <div className="text">
+                      <p className="mb-4">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts.
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <div
+                          className="user-img"
+                          style={{
+                            backgroundImage: "url(images/person_1.jpg)",
+                          }}
+                        />
+                        <div className="pl-3">
+                          <p className="name">Roger Scott</p>
+                          <span className="position">Marketing Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="item">
+                  <div className="testimony-wrap py-4">
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className="fa fa-quote-left" />
+                    </div>
+                    <div className="text">
+                      <p className="mb-4">
+                        Far far away, behind the word mountains, far from the
+                        countries Vokalia and Consonantia, there live the blind
+                        texts.
+                      </p>
+                      <div className="d-flex align-items-center">
+                        <div
+                          className="user-img"
+                          style={{
+                            backgroundImage: "url(images/person_2.jpg)",
+                          }}
+                        />
+                        <div className="pl-3">
+                          <p className="name">Roger Scott</p>
+                          <span className="position">Marketing Manager</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Contact />
+      <section className="ftco-section">
+        <div className="container">
+          <div className="row justify-content-center mb-5">
+            <div className="col-md-7 heading-section text-center ftco-animate">
+              <span className="subheading">Blog</span>
+              <h2>Recent Blog</h2>
+            </div>
+          </div>
+          <div className="row d-flex">
+            <div className="col-md-4 d-flex ftco-animate">
+              <div className="blog-entry justify-content-end">
+                <div className="text text-center">
+                  <a
+                    href="blog-single.html"
+                    className="block-20 img d-flex align-items-center"
+                    style={{ backgroundImage: 'url("images/image_1.jpg")' }}
+                  >
+                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
+                      <div>
+                        <span className="day">02</span>
+                        <span className="mos">June</span>
+                        <span className="yr">2020</span>
+                      </div>
+                    </div>
+                  </a>
+                  <h3 className="heading mb-3">
+                    <a href="#">Social Media Risks To Mental Health</a>
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex ftco-animate">
+              <div className="blog-entry justify-content-end">
+                <div className="text text-center">
+                  <a
+                    href="blog-single.html"
+                    className="block-20 img d-flex align-items-center"
+                    style={{ backgroundImage: 'url("images/image_2.jpg")' }}
+                  >
+                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
+                      <div>
+                        <span className="day">02</span>
+                        <span className="mos">June</span>
+                        <span className="yr">2020</span>
+                      </div>
+                    </div>
+                  </a>
+                  <h3 className="heading mb-3">
+                    <a href="#">Social Media Risks To Mental Health</a>
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="col-md-4 d-flex ftco-animate">
+              <div className="blog-entry justify-content-end">
+                <div className="text text-center">
+                  <a
+                    href="blog-single.html"
+                    className="block-20 img d-flex align-items-center"
+                    style={{ backgroundImage: 'url("images/image_3.jpg")' }}
+                  >
+                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
+                      <div>
+                        <span className="day">02</span>
+                        <span className="mos">June</span>
+                        <span className="yr">2020</span>
+                      </div>
+                    </div>
+                  </a>
+                  <h3 className="heading mb-3">
+                    <a href="#">Social Media Risks To Mental Health</a>
+                  </h3>
+                  <p>
+                    A small river named Duden flows by their place and supplies
+                    it with the necessary regelialia.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
+      {/* loader */}
+      <div id="ftco-loader" className="show fullscreen">
+        <svg className="circular" width="48px" height="48px">
+          <circle
+            className="path-bg"
+            cx={24}
+            cy={24}
+            r={22}
+            fill="none"
+            strokeWidth={4}
+            stroke="#eeeeee"
+          />
+          <circle
+            className="path"
+            cx={24}
+            cy={24}
+            r={22}
+            fill="none"
+            strokeWidth={4}
+            strokeMiterlimit={10}
+            stroke="#F96D00"
+          />
+        </svg>
       </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    </div>
+  );
 }
