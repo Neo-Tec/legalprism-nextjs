@@ -1,9 +1,22 @@
-import { Contact } from "@/components/contact/contact";
-import Footer from "@/components/footer/footer";
+"use client";
+
 import { Nav } from "@/components/nav/nav";
-import Image from "next/image";
+import { Footer } from "@/components/footer/footer";
+import { Contact } from "@/components/contact/contact";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log("Refresh Called");
+    // setTimeout(() => {
+    //   router.refresh();
+    //   console.log("Refresh Called");
+    // }, 1000);
+  });
+
   return (
     <div>
       <div className="wrap">

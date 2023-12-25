@@ -1,3 +1,5 @@
+import { Footer } from "@/components/footer/footer";
+import { Nav } from "@/components/nav/nav";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Script from "next/script";
@@ -58,7 +60,11 @@ export default function RootLayout({
         <Script src="js/google-map.js"></Script>
         <Script src="js/main.js"></Script>
       </head>
-      <body>{children}</body>
+      <body>
+        {/* <Nav /> */}
+        {children}
+        {/* <Footer /> */}
+      </body>
     </html>
   );
 }

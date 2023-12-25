@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Nav() {
   return (
     <nav
@@ -27,7 +29,7 @@ export function Nav() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="about.html" className="nav-link">
+              <a href="about" className="nav-link">
                 About
               </a>
             </li>
@@ -37,22 +39,12 @@ export function Nav() {
               </a>
             </li>
             <li className="nav-item">
-              <a href="cases.html" className="nav-link">
-                Cases
-              </a>
-            </li>
-            <li className="nav-item">
-              <a href="attorney.html" className="nav-link">
-                Attorneys
-              </a>
-            </li>
-            <li className="nav-item">
               <a href="blog.html" className="nav-link">
                 Blog
               </a>
             </li>
             <li className="nav-item">
-              <a href="contact.html" className="nav-link">
+              <a href="contact" className="nav-link">
                 Contact
               </a>
             </li>
