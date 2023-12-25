@@ -42,7 +42,7 @@ export default function Home() {
                   with the necessary regelialia.
                 </p>
                 <p>
-                  <a href="#" className="btn btn-primary py-3 px-4">
+                  <a href="contact" className="btn btn-primary py-3 px-4">
                     Contact us
                   </a>{" "}
                   <a href="#" className="btn btn-white py-3 px-4">
