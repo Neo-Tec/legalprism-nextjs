@@ -67,8 +67,9 @@ export function Nav() {
         id="ftco-navbar"
       >
         <div className="container">
-          <a className="navbar-brand" href="index.html">
-            Law Firm
+          <img src="/logo.png" height={30} className="mr-2" />
+          <a className="navbar-brand" href="/">
+            LegalPrism
           </a>
           <button
             className="navbar-toggler"
