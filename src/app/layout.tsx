@@ -61,9 +61,9 @@ export default function RootLayout({
         <Script src="js/main.js"></Script>
       </head>
       <body>
-        {/* <Nav /> */}
+        <Nav />
         {children}
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
