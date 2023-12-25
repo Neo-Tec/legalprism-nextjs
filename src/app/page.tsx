@@ -23,12 +23,15 @@ export default function Home() {
       {/* END nav */}
       <div
         className="hero-wrap"
-        style={{ backgroundImage: 'url("images/bg_1.jpg")' }}
+        // style={{ backgroundImage: 'url("images/bg_3.jpg")' }}
         data-stellar-background-ratio="0.5"
       >
         <div className="overlay" />
         <div className="container">
-          <div className="row no-gutters slider-text align-items-center">
+          <div
+            className="row no-gutters slider-text align-items-center"
+            style={{ gap: "100px" }}
+          >
             <div className="col-md-6 ftco-animate d-flex align-items-end">
               <div className="text w-100">
                 <h1 className="mb-4">
@@ -48,12 +51,13 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <a
-              href="https://vimeo.com/45830194"
-              className="img-video popup-vimeo d-flex align-items-center justify-content-center"
+            <div
+              //   href="https://vimeo.com/45830194"
+              className="popup-vimeo d-flex align-items-center justify-content-center"
             >
-              <span className="fa fa-play" />
-            </a>
+              <img src="/logo.png" width={"350px"} className="hero-image" />
+              {/* <span className="fa fa-play" /> */}
+            </div>
           </div>
         </div>
       </div>
@@ -380,7 +384,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="ftco-section testimony-section">
+      {/* <section className="ftco-section testimony-section">
         <div
           className="img img-bg"
           style={{ backgroundImage: "url(images/bg_4.jpg)" }}
@@ -530,7 +534,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <Contact />
       <section className="ftco-section">
         <div className="container">
