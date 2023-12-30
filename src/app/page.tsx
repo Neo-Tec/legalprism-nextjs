@@ -23,7 +23,7 @@ export default function Home() {
       {/* END nav */}
       <div
         className="hero-wrap"
-        // style={{ backgroundImage: 'url("images/bg_3.jpg")' }}
+        style={{ backgroundImage: 'url("images/bg_3.jpg")' }}
         data-stellar-background-ratio="0.5"
       >
         <div className="overlay" />
