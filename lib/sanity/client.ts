@@ -14,6 +14,7 @@ import {
   catquery,
   getAll,
   searchquery,
+  paginatedSearchQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -126,6 +127,34 @@ export async function getPaginatedPosts({ limit, pageIndex = 0 }: any) {
       (await client.fetch(paginatedquery, {
         pageIndex: pageIndex,
         limit: limit,
+      })) || []
+    );
+  }
+  return [];
+}
+
+export async function getLatestPost({ limit = 2 }: any) {
+  if (client) {
+    return (
+      (await client.fetch(limitquery, {
+        limit: limit,
+      })) || []
+    );
+  }
+  return [];
+}
+
+export async function getPaginatedSearchQuery({
+  limit = 5,
+  pageIndex = 0,
+  query = "",
+}) {
+  if (client) {
+    return (
+      (await client.fetch(paginatedSearchQuery, {
+        limit: limit,
+        pageIndex: pageIndex,
+        query: query,
       })) || []
     );
   }
