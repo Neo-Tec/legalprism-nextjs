@@ -35,7 +35,7 @@ export default async function Home() {
                   <a href="contact" className="btn btn-primary py-3 px-4">
                     Contact us
                   </a>{" "}
-                  <a href="#" className="btn btn-white py-3 px-4">
+                  <a href="blog" className="btn btn-white py-3 px-4">
                     Read more
                   </a>
                 </p>
