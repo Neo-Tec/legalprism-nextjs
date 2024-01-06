@@ -40,7 +40,7 @@ export default async function Blog({ searchParams }: any) {
               <div className="col-md-9 ftco-animate mb-5 text-center">
                 <p className="breadcrumbs mb-0">
                   <span className="mr-2">
-                    <a href="index.html">
+                    <a href="/">
                       Home <i className="fa fa-chevron-right" />
                     </a>
                   </span>
