@@ -10,7 +10,7 @@ export function Post({ post, pathPrefix }: any) {
   ).split(" ");
 
   return (
-    <div className="col-md-4 d-flex ftco-animate">
+    <div className="col-md-4 d-flex">
       <div className="blog-entry justify-content-end">
         <div className="text text-center">
           <a

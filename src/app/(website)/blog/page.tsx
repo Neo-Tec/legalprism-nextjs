@@ -1,3 +1,4 @@
+import Pagination from "@/components/pagination/pagination";
 import { Post } from "@/components/post/post";
 import { getPaginatedPosts } from "@cms/client";
 
@@ -60,35 +61,13 @@ export default async function Blog({ searchParams }: any) {
                 <Post key={post._id} post={post} />
               ))}
             </div>
-            {/* <div className="row mt-5">
-              <div className="col text-center">
-                <div className="block-27">
-                  <ul>
-                    <li>
-                      <a href="#">&lt;</a>
-                    </li>
-                    <li className="active">
-                      <span>1</span>
-                    </li>
-                    <li>
-                      <a href="#">2</a>
-                    </li>
-                    <li>
-                      <a href="#">3</a>
-                    </li>
-                    <li>
-                      <a href="#">4</a>
-                    </li>
-                    <li>
-                      <a href="#">5</a>
-                    </li>
-                    <li>
-                      <a href="#">&gt;</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div> */}
+            <div>
+              <Pagination
+                pageIndex={pageIndex}
+                isFirstPage={isFirstPage}
+                isLastPage={isLastPage}
+              />
+            </div>
           </div>
         </section>
       </div>

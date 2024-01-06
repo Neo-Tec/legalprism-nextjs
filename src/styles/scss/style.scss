@@ -611,6 +611,21 @@ h5,
   &:focus {
     outline: none;
   }
+  &.btn-outline-primary {
+    border: 1px solid $primary;
+    background: transparent;
+    color: $primary;
+    &:hover {
+      border: 1px solid transparent;
+      background: $primary;
+      color: $white;
+    }
+    &:active {
+      border: 1px solid transparent;
+      background: $primary;
+      color: $white;
+    }
+  }
   &.btn-primary {
     background: $primary !important;
     border: 1px solid $primary !important;
@@ -620,16 +635,16 @@ h5,
       background: transparent;
       color: $primary;
     }
-    &.btn-outline-primary {
-      border: 1px solid $primary;
-      background: transparent;
-      color: $primary;
-      &:hover {
-        border: 1px solid transparent;
-        background: $primary;
-        color: $white;
-      }
-    }
+    // &.btn-outline-primary {
+    //   border: 1px solid $primary;
+    //   background: transparent;
+    //   color: $primary;
+    //   &:hover {
+    //     border: 1px solid transparent;
+    //     background: $primary;
+    //     color: $white;
+    //   }
+    // }
   }
   &.btn-white {
     background: $white !important;
