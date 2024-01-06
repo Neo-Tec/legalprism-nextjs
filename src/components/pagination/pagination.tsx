@@ -32,7 +32,7 @@ export default function Pagination({
 
   return (
     <div className="container">
-      <nav
+      <div
         aria-label="Pagination"
         style={{
           display: "flex",
@@ -55,7 +55,7 @@ export default function Pagination({
             <span>Next</span>
           </button>
         </div>
-      </nav>
+      </div>
     </div>
   );
 }

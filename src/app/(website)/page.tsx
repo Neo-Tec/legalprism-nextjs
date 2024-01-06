@@ -9,14 +9,6 @@ import { useEffect } from "react";
 export default function Home() {
   const router = useRouter();
 
-  useEffect(() => {
-    console.log("Refresh Called");
-    // setTimeout(() => {
-    //   router.refresh();
-    //   console.log("Refresh Called");
-    // }, 1000);
-  });
-
   return (
     <div>
       {/* <Nav /> */}

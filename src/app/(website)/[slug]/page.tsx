@@ -62,6 +62,7 @@ export default async function EachBlog({ params }: any) {
                     alt={post.mainImage?.alt || "Thumbnail"}
                     loading="eager"
                     className="img-fluid mb-4"
+                    quality={50}
                   />
                 )}
 

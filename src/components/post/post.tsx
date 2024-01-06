@@ -2,7 +2,6 @@ import { urlForImage } from "@cms/image";
 import { format, parseISO } from "date-fns";
 
 export function Post({ post, pathPrefix }: any) {
-  console.log("post => ", post);
   const imageProps = post?.mainImage ? urlForImage(post.mainImage) : null;
   const publishDate = format(
     parseISO(post?.publishedAt || post._createdAt),
