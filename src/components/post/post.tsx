@@ -7,13 +7,14 @@ export function Post({ post, pathPrefix }: any) {
     parseISO(post?.publishedAt || post._createdAt),
     "dd MMMM yyyy"
   ).split(" ");
+  const blogLink = `/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`;
 
   return (
     <div className="col-md-4 d-flex">
       <div className="blog-entry justify-content-end">
         <div className="text text-center">
           <a
-            href={`/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`}
+            href={blogLink}
             className="block-20 img d-flex align-items-center"
             style={{ backgroundImage: `url("${imageProps?.src}")` }}
           >
@@ -26,7 +27,7 @@ export function Post({ post, pathPrefix }: any) {
             </div>
           </a>
           <h3 className="heading mb-3">
-            <a href="#">{post.title}</a>
+            <a href={blogLink}>{post.title}</a>
           </h3>
           <p>{post.excerpt}</p>
         </div>

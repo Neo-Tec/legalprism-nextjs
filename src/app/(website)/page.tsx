@@ -1,13 +1,11 @@
-"use client";
-
 import { Nav } from "@/components/nav/nav";
 import { Footer } from "@/components/footer/footer";
 import { Contact } from "@/components/contact/contact";
-import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { Post } from "@/components/post/post";
+import { getLatestPost } from "@cms/client";
 
-export default function Home() {
-  const router = useRouter();
+export default async function Home() {
+  const recent_post = await getLatestPost({ limit: 2 });
 
   return (
     <div>
@@ -537,84 +535,9 @@ export default function Home() {
             </div>
           </div>
           <div className="row d-flex">
-            <div className="col-md-4 d-flex ftco-animate">
-              <div className="blog-entry justify-content-end">
-                <div className="text text-center">
-                  <a
-                    href="blog-single.html"
-                    className="block-20 img d-flex align-items-center"
-                    style={{ backgroundImage: 'url("images/image_1.jpg")' }}
-                  >
-                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
-                      <div>
-                        <span className="day">02</span>
-                        <span className="mos">June</span>
-                        <span className="yr">2020</span>
-                      </div>
-                    </div>
-                  </a>
-                  <h3 className="heading mb-3">
-                    <a href="#">Social Media Risks To Mental Health</a>
-                  </h3>
-                  <p>
-                    A small river named Duden flows by their place and supplies
-                    it with the necessary regelialia.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 d-flex ftco-animate">
-              <div className="blog-entry justify-content-end">
-                <div className="text text-center">
-                  <a
-                    href="blog-single.html"
-                    className="block-20 img d-flex align-items-center"
-                    style={{ backgroundImage: 'url("images/image_2.jpg")' }}
-                  >
-                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
-                      <div>
-                        <span className="day">02</span>
-                        <span className="mos">June</span>
-                        <span className="yr">2020</span>
-                      </div>
-                    </div>
-                  </a>
-                  <h3 className="heading mb-3">
-                    <a href="#">Social Media Risks To Mental Health</a>
-                  </h3>
-                  <p>
-                    A small river named Duden flows by their place and supplies
-                    it with the necessary regelialia.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="col-md-4 d-flex ftco-animate">
-              <div className="blog-entry justify-content-end">
-                <div className="text text-center">
-                  <a
-                    href="blog-single.html"
-                    className="block-20 img d-flex align-items-center"
-                    style={{ backgroundImage: 'url("images/image_3.jpg")' }}
-                  >
-                    <div className="meta text-center mb-2 d-flex align-items-center justify-content-center">
-                      <div>
-                        <span className="day">02</span>
-                        <span className="mos">June</span>
-                        <span className="yr">2020</span>
-                      </div>
-                    </div>
-                  </a>
-                  <h3 className="heading mb-3">
-                    <a href="#">Social Media Risks To Mental Health</a>
-                  </h3>
-                  <p>
-                    A small river named Duden flows by their place and supplies
-                    it with the necessary regelialia.
-                  </p>
-                </div>
-              </div>
-            </div>
+            {recent_post.map((post: any) => (
+              <Post key={post._id} post={post} />
+            ))}
           </div>
         </div>
       </section>
