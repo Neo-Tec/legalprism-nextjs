@@ -34,7 +34,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="blog/single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_1.jpg")' }}
                     >
@@ -60,7 +60,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_2.jpg")' }}
                     >
@@ -86,7 +86,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_3.jpg")' }}
                     >
@@ -112,7 +112,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_4.jpg")' }}
                     >
@@ -138,7 +138,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_5.jpg")' }}
                     >
@@ -164,7 +164,7 @@ export default function Blog() {
                 <div className="blog-entry justify-content-end">
                   <div className="text text-center">
                     <a
-                      href="blog-single.html"
+                      href="single-blog"
                       className="block-20 img d-flex align-items-center"
                       style={{ backgroundImage: 'url("images/image_6.jpg")' }}
                     >
