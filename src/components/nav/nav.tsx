@@ -92,7 +92,7 @@ export function Nav() {
               <li
                 className={`nav-item ${pathname === "/about" ? "active" : ""}`}
               >
-                <a href="about" className="nav-link">
+                <a href="/about" className="nav-link">
                   About
                 </a>
               </li>
@@ -101,14 +101,14 @@ export function Nav() {
                   pathname === "/practice-area" ? "active" : ""
                 }`}
               >
-                <a href="practice-area" className="nav-link">
+                <a href="/practice-area" className="nav-link">
                   Practice Areas
                 </a>
               </li>
               <li
                 className={`nav-item ${pathname === "/blog" ? "active" : ""}`}
               >
-                <a href="blog" className="nav-link">
+                <a href="/blog" className="nav-link">
                   Blog
                 </a>
               </li>
@@ -117,7 +117,7 @@ export function Nav() {
                   pathname === "/contact" ? "active" : ""
                 }`}
               >
-                <a href="contact" className="nav-link">
+                <a href="/contact" className="nav-link">
                   Contact
                 </a>
               </li>

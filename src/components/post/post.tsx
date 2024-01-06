@@ -1,5 +1,6 @@
 import { urlForImage } from "@cms/image";
 import { format, parseISO } from "date-fns";
+import Script from "next/script";
 
 export function Post({ post, pathPrefix }: any) {
   const imageProps = post?.mainImage ? urlForImage(post.mainImage) : null;
@@ -7,7 +8,9 @@ export function Post({ post, pathPrefix }: any) {
     parseISO(post?.publishedAt || post._createdAt),
     "dd MMMM yyyy"
   ).split(" ");
-  const blogLink = `/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`;
+  const blogLink = `post/${pathPrefix ? `${pathPrefix}/` : ""}${
+    post.slug.current
+  }`;
 
   return (
     <div className="col-md-4 d-flex">

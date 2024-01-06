@@ -4,6 +4,7 @@ import { PortableText } from "@cms/plugins/portabletext";
 import { format, parseISO } from "date-fns";
 
 import Image from "next/image";
+import Script from "next/script";
 
 export const revalidate = 30;
 
@@ -52,14 +53,16 @@ export default async function EachBlog({ params }: any) {
   const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
 
   const recent_posts = await getLatestPost({ limit: 2 });
-  const tags = post.categories.map((category: any) => category?.slug?.current);
+  const tags = post?.categories?.map(
+    (category: any) => category?.slug?.current
+  );
 
   return (
     <>
       <section className="ftco-section ftco-degree-bg">
         <div className="container">
           <div className="row">
-            <div className="col-lg-8 ftco-animate">
+            <div className="col-lg-8 ">
               <h1 className=" mb-4 mt-2 text-center">{post.title}</h1>
               <div id="blog-content">
                 {imageProps && (
@@ -76,7 +79,7 @@ export default async function EachBlog({ params }: any) {
               </div>
               <div className="tag-widget post-tag-container mb-5 mt-5">
                 <div className="tagcloud">
-                  {tags.map((tag: any, index: number) => (
+                  {tags?.map((tag: any, index: number) => (
                     <a
                       key={`${tag}_${index}`}
                       href="#"
@@ -89,14 +92,14 @@ export default async function EachBlog({ params }: any) {
               </div>
             </div>{" "}
             {/* .col-md-8 */}
-            <div className="col-lg-4 sidebar pl-lg-5 ftco-animate">
-              <div className="sidebar-box ftco-animate">
+            <div className="col-lg-4 sidebar pl-lg-5 ">
+              <div className="sidebar-box ">
                 <h3>Recent Blog</h3>
                 {recent_posts.map((post: any) => (
-                  <SidePost key={post._id} post={post} />
+                  <SidePost key={post._id} post={post} pathPrefix="post" />
                 ))}
               </div>
-              <div className="sidebar-box ftco-animate">
+              <div className="sidebar-box ">
                 <h3>Tags</h3>
                 <div className="tagcloud">
                   {tags.map((tag: any, index: number) => (
@@ -110,7 +113,7 @@ export default async function EachBlog({ params }: any) {
                   ))}
                 </div>
               </div>
-              <div className="sidebar-box ftco-animate">
+              <div className="sidebar-box ">
                 <h3>Excerpt</h3>
                 <p>{post.excerpt}</p>
               </div>

@@ -58,7 +58,7 @@ export default function RootLayout({
         <Script src="js/jquery.animateNumber.min.js"></Script>
         <Script src="js/scrollax.min.js"></Script>
         <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></Script>
-        <Script src="js/google-map.js"></Script>
+        {/* <Script src="js/google-map.js"></Script> */}
         <Script src="js/main.js"></Script>
       </head>
       <body>
