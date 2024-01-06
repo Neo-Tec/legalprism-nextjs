@@ -1,6 +1,7 @@
 import Pagination from "@/components/pagination/pagination";
 import { Post } from "@/components/post/post";
-import { getPaginatedPosts } from "@cms/client";
+import { SearchBar } from "@/components/search-bar/search-bar";
+import { getPaginatedPosts, getPaginatedSearchQuery } from "@cms/client";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,7 @@ export const runtime = "edge";
 export default async function Blog({ searchParams }: any) {
   // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
   const page = searchParams.page;
+  const query = searchParams.query;
   const pageIndex = parseInt(page, 10) || 1;
 
   // Set the number of posts to be displayed per page
@@ -20,7 +22,9 @@ export default async function Blog({ searchParams }: any) {
     limit: pageIndex * POSTS_PER_PAGE,
   };
 
-  const posts = await getPaginatedPosts(params);
+  const posts = query
+    ? await getPaginatedSearchQuery(params, query)
+    : await getPaginatedPosts(params);
 
   // Check if the current page is the first or the last
   const isFirstPage = pageIndex < 2;
@@ -56,7 +60,8 @@ export default async function Blog({ searchParams }: any) {
         </section>
         <section className="ftco-section">
           <div className="container">
-            <div className="row d-flex">
+            <SearchBar query={query} />
+            <div className="row d-flex ">
               {posts.map((post: any) => (
                 <Post key={post._id} post={post} />
               ))}

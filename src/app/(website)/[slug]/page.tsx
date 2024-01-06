@@ -87,7 +87,7 @@ export default async function EachBlog({ params }: any) {
             </div>{" "}
             {/* .col-md-8 */}
             <div className="col-lg-4 sidebar pl-lg-5 ftco-animate">
-              <div className="sidebar-box">
+              {/* <div className="sidebar-box">
                 <form action="#" className="search-form">
                   <div className="form-group">
                     <span className="fa fa-search" />
@@ -98,7 +98,7 @@ export default async function EachBlog({ params }: any) {
                     />
                   </div>
                 </form>
-              </div>
+              </div> */}
               <div className="sidebar-box ftco-animate">
                 <h3>Recent Blog</h3>
                 <div className="block-21 mb-4 d-flex">

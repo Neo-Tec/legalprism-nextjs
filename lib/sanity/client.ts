@@ -144,11 +144,10 @@ export async function getLatestPost({ limit = 2 }: any) {
   return [];
 }
 
-export async function getPaginatedSearchQuery({
-  limit = 5,
-  pageIndex = 0,
-  query = "",
-}) {
+export async function getPaginatedSearchQuery(
+  { limit = 5, pageIndex = 0 },
+  query: string
+) {
   if (client) {
     return (
       (await client.fetch(paginatedSearchQuery, {
