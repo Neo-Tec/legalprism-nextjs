@@ -1,5 +1,10 @@
 import { getAllPostsSlugs, getPostBySlug } from "@cms/client";
+import { urlForImage } from "@cms/image";
 import { PortableText } from "@cms/plugins/portabletext";
+
+import Image from "next/image";
+
+export const revalidate = 30;
 
 export async function generateStaticParams() {
   return await getAllPostsSlugs();
@@ -12,9 +17,11 @@ export async function generateMetadata({ params }: any) {
 
 export default async function EachBlog({ params }: any) {
   const post = await getPostBySlug(params.slug);
+  const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
+
   return (
     <>
-      <section
+      {/* <section
         className="hero-wrap hero-wrap-2"
         style={{ backgroundImage: 'url("/images/bg_5.jpg")' }}
         data-stellar-background-ratio="0.5"
@@ -42,13 +49,23 @@ export default async function EachBlog({ params }: any) {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="ftco-section ftco-degree-bg">
         <div className="container">
           <div className="row">
             <div className="col-lg-8 ftco-animate">
+              <h1 className=" mb-4 mt-2 text-center">{post.title}</h1>
               <div id="blog-content">
-                {"Hello" && <PortableText value={post.body} />}
+                {imageProps && (
+                  <Image
+                    src={imageProps}
+                    alt={post.mainImage?.alt || "Thumbnail"}
+                    loading="eager"
+                    className="img-fluid mb-4"
+                  />
+                )}
+
+                <PortableText value={post.body} />
               </div>
               <div className="tag-widget post-tag-container mb-5 mt-5">
                 <div className="tagcloud">
