@@ -121,7 +121,7 @@ export function Contact() {
                   <div className="form-group">
                     <textarea
                       name="Message"
-                      required="true"
+                      required={true}
                       id=""
                       cols={30}
                       rows={7}
