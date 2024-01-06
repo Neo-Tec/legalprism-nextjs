@@ -5,8 +5,6 @@ import { getPaginatedPosts, getPaginatedSearchQuery } from "@cms/client";
 
 export const dynamic = "force-dynamic";
 
-export const runtime = "edge";
-
 export default async function Blog({ searchParams }: any) {
   // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
   const page = searchParams.page;
