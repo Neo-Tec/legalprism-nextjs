@@ -1,10 +1,17 @@
-import { getPostBySlug } from "@cms/client";
+import { getAllPostsSlugs, getPostBySlug } from "@cms/client";
 import { PortableText } from "@cms/plugins/portabletext";
 
-export default async function EachBlog() {
-  const post = await getPostBySlug(
-    "10-simple-practices-that-will-help-you-get-1-better-every-day"
-  );
+export async function generateStaticParams() {
+  return await getAllPostsSlugs();
+}
+
+export async function generateMetadata({ params }: any) {
+  const post = await getPostBySlug(params.slug);
+  return { title: post.title };
+}
+
+export default async function EachBlog({ params }: any) {
+  const post = await getPostBySlug(params.slug);
   return (
     <>
       <section

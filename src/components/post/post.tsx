@@ -1,7 +1,7 @@
 import { urlForImage } from "@cms/image";
 import { format, parseISO } from "date-fns";
 
-export function Post({ post }: any) {
+export function Post({ post, pathPrefix }: any) {
   console.log("post => ", post);
   const imageProps = post?.mainImage ? urlForImage(post.mainImage) : null;
   const publishDate = format(
@@ -14,7 +14,7 @@ export function Post({ post }: any) {
       <div className="blog-entry justify-content-end">
         <div className="text text-center">
           <a
-            href="single-blog"
+            href={`/${pathPrefix ? `${pathPrefix}/` : ""}${post.slug.current}`}
             className="block-20 img d-flex align-items-center"
             style={{ backgroundImage: `url("${imageProps?.src}")` }}
           >
