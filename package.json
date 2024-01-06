@@ -28,7 +28,8 @@
     "sass": "^1.69.5",
     "styled-components": "^6.1.6",
     "react-iframe": "^1.8.5",
-    "react-refractor": "^2.1.7"
+    "react-refractor": "^2.1.7",
+    "get-video-id": "^3.6.5"
   },
   "devDependencies": {
     "@types/node": "^20",
