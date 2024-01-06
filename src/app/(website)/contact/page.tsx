@@ -173,7 +173,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="col-md-5 order-md-first d-flex align-items-stretch">
-                      <div id="map" className="map" />
+                      {/* <div id="map" className="map" /> */}
                     </div>
                   </div>
                 </div>
