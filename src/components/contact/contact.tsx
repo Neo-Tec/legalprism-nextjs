@@ -63,11 +63,18 @@ export function Contact() {
           </div>
           <div className="col-md-6 half ftco-animate">
             <h2 className="mb-4">Free Case Consultation</h2>
-            <form action="#" className="appointment">
+            <form
+              name="Contact Me"
+              className="appointment"
+              action="https://formspree.io/f/mwkdgrqk"
+              method="POST"
+            >
               <div className="row">
                 <div className="col-md-6">
                   <div className="form-group">
                     <input
+                      name="Name"
+                      required={true}
                       type="text"
                       className="form-control"
                       placeholder="Your Name"
@@ -77,6 +84,8 @@ export function Contact() {
                 <div className="col-md-6">
                   <div className="form-group">
                     <input
+                      name="Email"
+                      required={true}
                       type="text"
                       className="form-control"
                       placeholder="Email"
@@ -90,7 +99,12 @@ export function Contact() {
                         <div className="icon">
                           <span className="fa fa-chevron-down" />
                         </div>
-                        <select name={""} id={""} className="form-control">
+                        <select
+                          name={"Law Type"}
+                          id={""}
+                          required={false}
+                          className="form-control"
+                        >
                           <option value={""}>Practice Areas</option>
                           <option value={""}>Business Law</option>
                           <option value={""}>Criminal Law</option>
@@ -106,7 +120,8 @@ export function Contact() {
                 <div className="col-md-12">
                   <div className="form-group">
                     <textarea
-                      name=""
+                      name="Message"
+                      required="true"
                       id=""
                       cols={30}
                       rows={7}
