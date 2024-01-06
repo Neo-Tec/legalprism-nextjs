@@ -10,8 +10,8 @@ export function SearchBar({ query }: any) {
   const params = new URLSearchParams(searchParams);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const setQueryParam = (query: string) => {
-    params.set("query", query);
+  const setQueryParam = () => {
+    params.set("query", inputRef.current?.value || "");
     const url_query = params.toString();
 
     router.push(`/blog?${url_query}`, { scroll: false });
@@ -21,7 +21,7 @@ export function SearchBar({ query }: any) {
     const keyDownHandler = (event: any) => {
       if (event.key === "Enter") {
         event.preventDefault();
-        setQueryParam(inputRef.current?.value || "");
+        setQueryParam();
       }
     };
 
@@ -36,7 +36,13 @@ export function SearchBar({ query }: any) {
     <div className="d-flex justify-content-end mb-4">
       <form action="#" className="search-form" style={{ width: "350px" }}>
         <div className="form-group">
-          <span className="fa fa-search" />
+          <button
+            className="fa fa-search btn btn-outline-primary"
+            onClick={(e) => {
+              e.preventDefault();
+              setQueryParam();
+            }}
+          ></button>
           <input
             ref={inputRef}
             type="text"
