@@ -3,7 +3,7 @@ import { Post } from "@/components/post/post";
 import { SearchBar } from "@/components/search-bar/search-bar";
 import { getPaginatedPosts, getPaginatedSearchQuery } from "@cms/client";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 30;
 
 export default async function Blog({ searchParams }: any) {
   // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
