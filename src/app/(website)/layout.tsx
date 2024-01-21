@@ -6,8 +6,12 @@ import { getSettings } from "@cms/client";
 import { urlForImage } from "@cms/image";
 import Script from "next/script";
 
+export const revalidate = 60;
+
 async function sharedMetaData(params: any) {
   const settings = await getSettings();
+
+  console.log("settings => ", settings);
 
   return {
     // enable this for resolving opengraph image

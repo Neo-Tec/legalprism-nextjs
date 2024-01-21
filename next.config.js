@@ -9,6 +9,12 @@ const nextConfig = {
     dangerouslyAllowSVG: true,
     remotePatterns: [{ hostname: "cdn.sanity.io" }],
   },
+
+  logging: {
+    fetches: {
+      fullUrl: true,
+    },
+  },
 };
 
 module.exports = nextConfig;
