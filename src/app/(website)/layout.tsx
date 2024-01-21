@@ -16,7 +16,7 @@ async function sharedMetaData(params: any) {
     // metadataBase: new URL(settings.url),
     title: {
       default: settings?.title || "LegalPrism - Not If, But How",
-      template: "%s | Stablo",
+      template: "%s | LegalPrism",
     },
     description: settings?.description || "This is the LegalPrism webstie",
     keywords: ["Next.js", "Sanity", "Bootstrap"],
