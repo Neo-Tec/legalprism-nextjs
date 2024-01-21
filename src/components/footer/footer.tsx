@@ -1,16 +1,21 @@
 import { getSocials } from "@cms/client";
 
-export async function Footer() {
-  const socials = await getSocials();
-
+export async function Footer({ settings }: { settings: any }) {
   const twitterUrl =
-    socials.social.find((social: any) => social.media === "twitter")?.url || ``;
+    settings.social.find((social: any) => social.media === "twitter")?.url ||
+    ``;
   const facebookUrl =
-    socials.social.find((social: any) => social.media === "facebook")?.url ||
+    settings.social.find((social: any) => social.media === "facebook")?.url ||
     ``;
   const instagramUrl =
-    socials.social.find((social: any) => social.media === "instagram")?.url ||
+    settings.social.find((social: any) => social.media === "instagram")?.url ||
     ``;
+
+  const phoneNumber = settings?.phone || "+91 6394735197";
+  const address =
+    settings?.address ||
+    "203 Fake St. Mountain View, San Francisco, California, USA";
+  const email = settings?.email || "blog.legalprism@gmail.com";
 
   return (
     <footer className="ftco-footer">
@@ -143,20 +148,18 @@ export async function Footer() {
                 <ul>
                   <li>
                     <span className="icon fa fa-map marker" />
-                    <span className="text">
-                      203 Fake St. Mountain View, San Francisco, California, USA
-                    </span>
+                    <span className="text">{address}</span>
                   </li>
                   <li>
                     <a href="#">
                       <span className="icon fa fa-phone" />
-                      <span className="text">+2 392 3929 210</span>
+                      <span className="text">{phoneNumber}</span>
                     </a>
                   </li>
                   <li>
                     <a href="#">
                       <span className="icon fa fa-paper-plane pr-4" />
-                      <span className="text">info@yourdomain.com</span>
+                      <span className="text">{email}</span>
                     </a>
                   </li>
                 </ul>
@@ -170,12 +173,10 @@ export async function Footer() {
           <div className="row">
             <div className="col-md-12">
               <p className="mb-0" style={{ color: "rgba(255,255,255,.5)" }}>
-                {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 This website is made by{" "}
                 <a href="https://artaza.in" target="_blank">
                   CyberPlanet Agency
                 </a>
-                {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
               </p>
             </div>
           </div>

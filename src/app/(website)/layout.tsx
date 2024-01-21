@@ -44,11 +44,13 @@ export async function generateMetadata({ params }: any) {
   return await sharedMetaData(params);
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const settings = await getSettings();
+
   return (
     <html lang="en">
       <head>
@@ -95,7 +97,7 @@ export default function RootLayout({
       <body>
         <Nav />
         {children}
-        <Footer />
+        <Footer settings={settings} />
       </body>
     </html>
   );
