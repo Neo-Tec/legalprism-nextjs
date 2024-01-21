@@ -9,8 +9,6 @@ import Script from "next/script";
 async function sharedMetaData(params: any) {
   const settings = await getSettings();
 
-  console.log("settings => ", settings);
-
   return {
     // enable this for resolving opengraph image
     // metadataBase: new URL(settings.url),

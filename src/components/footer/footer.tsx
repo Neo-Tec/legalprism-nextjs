@@ -1,4 +1,17 @@
-export function Footer() {
+import { getSocials } from "@cms/client";
+
+export async function Footer() {
+  const socials = await getSocials();
+
+  const twitterUrl =
+    socials.social.find((social: any) => social.media === "twitter")?.url || ``;
+  const facebookUrl =
+    socials.social.find((social: any) => social.media === "facebook")?.url ||
+    ``;
+  const instagramUrl =
+    socials.social.find((social: any) => social.media === "instagram")?.url ||
+    ``;
+
   return (
     <footer className="ftco-footer">
       <div className="container">
@@ -13,17 +26,17 @@ export function Footer() {
               </p>
               <ul className="ftco-footer-social list-unstyled mt-2">
                 <li className="ftco-animate">
-                  <a href="#">
+                  <a href={twitterUrl}>
                     <span className="fa fa-twitter" />
                   </a>
                 </li>
                 <li className="ftco-animate">
-                  <a href="#">
+                  <a href={facebookUrl}>
                     <span className="fa fa-facebook" />
                   </a>
                 </li>
                 <li className="ftco-animate">
-                  <a href="#">
+                  <a href={instagramUrl}>
                     <span className="fa fa-instagram" />
                   </a>
                 </li>
@@ -35,7 +48,7 @@ export function Footer() {
               <h2 className="ftco-heading-2">Explore</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">
+                  <a href={`#`}>
                     <span className="fa fa-chevron-right mr-2" />
                     About
                   </a>

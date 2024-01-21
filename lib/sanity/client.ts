@@ -15,6 +15,7 @@ import {
   getAll,
   searchquery,
   paginatedSearchQuery,
+  socialsQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -56,6 +57,13 @@ export async function getAllPosts() {
 export async function getSettings() {
   if (client) {
     return (await client.fetch(configQuery)) || [];
+  }
+  return [];
+}
+
+export async function getSocials() {
+  if (client) {
+    return (await client.fetch(socialsQuery)) || [];
   }
   return [];
 }
