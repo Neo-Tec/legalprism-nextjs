@@ -2,13 +2,13 @@ import { getSocials } from "@cms/client";
 
 export async function Footer({ settings }: { settings: any }) {
   const twitterUrl =
-    settings.social.find((social: any) => social.media === "twitter")?.url ||
+    settings?.social.find((social: any) => social.media === "twitter")?.url ||
     ``;
   const facebookUrl =
-    settings.social.find((social: any) => social.media === "facebook")?.url ||
+    settings?.social.find((social: any) => social.media === "facebook")?.url ||
     ``;
   const instagramUrl =
-    settings.social.find((social: any) => social.media === "instagram")?.url ||
+    settings?.social.find((social: any) => social.media === "instagram")?.url ||
     ``;
 
   const phoneNumber = settings?.phone || "+91 6394735197";

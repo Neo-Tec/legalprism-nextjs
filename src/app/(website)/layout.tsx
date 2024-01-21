@@ -95,7 +95,7 @@ export default async function RootLayout({
         <Script src="js/main.js"></Script>
       </head>
       <body>
-        <Nav />
+        <Nav settings={settings} />
         {children}
         <Footer settings={settings} />
       </body>

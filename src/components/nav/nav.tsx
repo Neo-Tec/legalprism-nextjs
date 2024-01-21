@@ -1,10 +1,27 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import Link from "next/link";
+import Image from "next/image";
 
-export function Nav() {
+export function Nav({ settings }: { settings: any }) {
   const pathname = usePathname();
+
+  const twitterUrl =
+    settings?.social.find((social: any) => social.media === "twitter")?.url ||
+    ``;
+  const facebookUrl =
+    settings?.social.find((social: any) => social.media === "facebook")?.url ||
+    ``;
+  const instagramUrl =
+    settings?.social.find((social: any) => social.media === "instagram")?.url ||
+    ``;
+
+  const phoneNumber = settings?.phone || "+91 6394735197";
+  const address =
+    settings?.address ||
+    "203 Fake St. Mountain View, San Francisco, California, USA";
+  const email = settings?.email || "blog.legalprism@gmail.com";
+
   return (
     <>
       <div className="wrap">
@@ -13,11 +30,10 @@ export function Nav() {
             <div className="col-md-6 d-flex align-items-center">
               <p className="mb-0 phone pl-md-2">
                 <a href="#" className="mr-2">
-                  <span className="fa fa-phone mr-1" /> +00 1234 567
+                  <span className="fa fa-phone mr-1" /> {phoneNumber}
                 </a>
                 <a href="#">
-                  <span className="fa fa-paper-plane mr-1" />{" "}
-                  youremail@email.com
+                  <span className="fa fa-paper-plane mr-1" /> {email}
                 </a>
               </p>
             </div>
@@ -25,7 +41,7 @@ export function Nav() {
               <div className="social-media">
                 <p className="mb-0 d-flex">
                   <a
-                    href="#"
+                    href={facebookUrl}
                     className="d-flex align-items-center justify-content-center"
                   >
                     <span className="fa fa-facebook">
@@ -33,7 +49,7 @@ export function Nav() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href={twitterUrl}
                     className="d-flex align-items-center justify-content-center"
                   >
                     <span className="fa fa-twitter">
@@ -41,7 +57,7 @@ export function Nav() {
                     </span>
                   </a>
                   <a
-                    href="#"
+                    href={instagramUrl}
                     className="d-flex align-items-center justify-content-center"
                   >
                     <span className="fa fa-instagram">
@@ -67,7 +83,15 @@ export function Nav() {
         id="ftco-navbar"
       >
         <div className="container">
-          <img src="/logo.png" height={30} className="mr-2" />
+          <a href="/">
+            <Image
+              alt="Legal Prism Logo"
+              src="/logo.png"
+              height={30}
+              width={30}
+              className="mr-2"
+            />
+          </a>
           <a className="navbar-brand" href="/">
             LegalPrism
           </a>
