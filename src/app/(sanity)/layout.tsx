@@ -11,8 +11,7 @@ export default function RootLayout({
       <button
         onClick={() => {
           fetch(
-            process.env?.NEXT_PUBLIC_REBUILD_HOOK ||
-              "https://api.netlify.com/build_hooks/65acc7e1c319e82dd4ad678f",
+            "https://api.netlify.com/build_hooks/65acc7e1c319e82dd4ad678f",
             {
               method: "POST",
               headers: {
