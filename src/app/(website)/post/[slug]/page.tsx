@@ -6,8 +6,6 @@ import { format, parseISO } from "date-fns";
 import Image from "next/image";
 import Script from "next/script";
 
-export const revalidate = 30;
-
 export async function generateStaticParams() {
   return await getAllPostsSlugs();
 }

@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-export const revalidate = 30;
-
 export default function Contact() {
   return (
     <>

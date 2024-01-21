@@ -4,8 +4,6 @@ import { Contact } from "@/components/contact/contact";
 import { Post } from "@/components/post/post";
 import { getLatestPost } from "@cms/client";
 
-export const revalidate = 30;
-
 export default async function Home() {
   const recent_post = await getLatestPost({ limit: 2 });
 
