@@ -8,22 +8,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>{children}</body>
-      <button
-        onClick={() => {
-          fetch(
-            "https://api.netlify.com/build_hooks/65acc7e1c319e82dd4ad678f",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-              },
-              body: "{}",
-            }
-          );
-        }}
-      >
-        REBUILD WEBSITE
-      </button>
     </html>
   );
 }
