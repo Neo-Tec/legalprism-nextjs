@@ -2,6 +2,7 @@ import "../../styles/scss/style.scss";
 
 import { Footer } from "@/components/footer/footer";
 import { Nav } from "@/components/nav/nav";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
 import { getSettings } from "@cms/client";
 import { urlForImage } from "@cms/image";
 import Script from "next/script";
@@ -93,6 +94,8 @@ export default async function RootLayout({
         <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></Script>
         {/* <Script src="js/google-map.js"></Script> */}
         <Script src="/js/main.js"></Script>
+
+        <GoogleAnalytics measurementId="G-89N7FSPHWT" />
       </head>
       <body>
         <Nav settings={settings} />

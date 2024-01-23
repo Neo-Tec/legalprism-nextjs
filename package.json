@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@bradgarropy/next-google-analytics": "^1.0.2",
     "@sanity/code-input": "^4.1.0",
     "@sanity/icons": "^2.2.2",
     "@sanity/image-url": "^1.0.2",
