@@ -2,7 +2,7 @@ import "../../styles/scss/style.scss";
 
 import { Footer } from "@/components/footer/footer";
 import { Nav } from "@/components/nav/nav";
-import GoogleAnalytics from "@bradgarropy/next-google-analytics/dist/types/components/GoogleAnalytics";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import { getSettings } from "@cms/client";
 import { urlForImage } from "@cms/image";
 import Script from "next/script";
