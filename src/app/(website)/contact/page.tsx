@@ -1,6 +1,15 @@
+import { getSettings } from "@cms/client";
 import Link from "next/link";
 
-export default function Contact() {
+export default async function Contact() {
+  const settings = await getSettings();
+
+  const phoneNumber = settings?.phone || "+91 6394735197";
+  const address =
+    settings?.address ||
+    "203 Fake St. Mountain View, San Francisco, California, USA";
+  const email = settings?.email || "blog.legalprism@gmail.com";
+
   return (
     <>
       <div>
@@ -42,8 +51,7 @@ export default function Contact() {
                         </div>
                         <div className="text">
                           <p>
-                            <span>Address:</span> 198 West 21th Street, Suite
-                            721 New York NY 10016
+                            <span>Address:</span> {address}
                           </p>
                         </div>
                       </div>
@@ -56,7 +64,7 @@ export default function Contact() {
                         <div className="text">
                           <p>
                             <span>Phone:</span>{" "}
-                            <a href="tel://1234567920">+ 1235 2355 98</a>
+                            <a href="tel://1234567920">{phoneNumber}</a>
                           </p>
                         </div>
                       </div>
@@ -69,21 +77,7 @@ export default function Contact() {
                         <div className="text">
                           <p>
                             <span>Email:</span>{" "}
-                            <a href="mailto:info@yoursite.com">
-                              info@yoursite.com
-                            </a>
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-md-3">
-                      <div className="dbox w-100 text-center">
-                        <div className="icon d-flex align-items-center justify-content-center">
-                          <span className="fa fa-globe" />
-                        </div>
-                        <div className="text">
-                          <p>
-                            <span>Website</span> <a href="#">yoursite.com</a>
+                            <a href="mailto:info@yoursite.com">{email}</a>
                           </p>
                         </div>
                       </div>
@@ -98,6 +92,7 @@ export default function Contact() {
                           id="contactForm"
                           name="contactForm"
                           className="contactForm"
+                          action="https://formspree.io/f/xbjndgrv"
                         >
                           <div className="row">
                             <div className="col-md-6">
@@ -173,7 +168,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="col-md-5 order-md-first d-flex align-items-stretch">
-                      {/* <div id="map" className="map" /> */}
+                      <div id="map" className="map" />
                     </div>
                   </div>
                 </div>
