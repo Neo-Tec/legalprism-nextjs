@@ -92,14 +92,14 @@ export default async function EachBlog({ params }: any) {
             <div className="col-lg-4 sidebar pl-lg-5 ">
               <div className="sidebar-box ">
                 <h3>Recent Blog</h3>
-                {recent_posts.map((post: any) => (
+                {recent_posts?.map((post: any) => (
                   <SidePost key={post._id} post={post} pathPrefix="post" />
                 ))}
               </div>
               <div className="sidebar-box ">
                 <h3>Tags</h3>
                 <div className="tagcloud">
-                  {tags.map((tag: any, index: number) => (
+                  {tags?.map((tag: any, index: number) => (
                     <a
                       key={`${tag}_${index}`}
                       href="#"
