@@ -66,7 +66,7 @@ export function Contact() {
             <form
               name="Contact Me"
               className="appointment"
-              action="https://formspree.io/f/mwkdgrqk"
+              action="https://formspree.io/f/xbjndgrv"
               method="POST"
             >
               <div className="row">
