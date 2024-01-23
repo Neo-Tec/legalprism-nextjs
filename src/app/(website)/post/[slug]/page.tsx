@@ -4,7 +4,6 @@ import { PortableText } from "@cms/plugins/portabletext";
 import { format, parseISO } from "date-fns";
 
 import Image from "next/image";
-import Script from "next/script";
 
 export async function generateStaticParams() {
   return await getAllPostsSlugs();
