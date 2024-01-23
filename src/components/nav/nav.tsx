@@ -113,13 +113,7 @@ export function Nav({ settings }: { settings: any }) {
                   Home
                 </a>
               </li>
-              {/* <li
-                className={`nav-item ${pathname === "/about" ? "active" : ""}`}
-              >
-                <a href="/about" className="nav-link">
-                  About
-                </a>
-              </li> */}
+
               {/* <li
                 className={`nav-item ${
                   pathname === "/practice-area" ? "active" : ""
@@ -143,6 +137,13 @@ export function Nav({ settings }: { settings: any }) {
               >
                 <a href="/contact" className="nav-link">
                   Contact
+                </a>
+              </li>
+              <li
+                className={`nav-item ${pathname === "/about" ? "active" : ""}`}
+              >
+                <a href="/about" className="nav-link">
+                  About
                 </a>
               </li>
             </ul>

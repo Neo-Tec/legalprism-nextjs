@@ -16,6 +16,7 @@ import {
   searchquery,
   paginatedSearchQuery,
   socialsQuery,
+  allLawyersQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -101,6 +102,13 @@ export async function getAuthorPostsBySlug(slug: any) {
 export async function getAllAuthors() {
   if (client) {
     return (await client.fetch(allauthorsquery)) || [];
+  }
+  return [];
+}
+
+export async function getAllLawyers() {
+  if (client) {
+    return (await client.fetch(allLawyersQuery)) || [];
   }
   return [];
 }
