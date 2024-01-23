@@ -35,60 +35,6 @@ export default async function About() {
         <section className="ftco-section">
           <div className="container">
             <div className="row">
-              <div className="col-md-6 col-lg-3 ftco-animate">
-                <div className="staff">
-                  <div className="img-wrap d-flex align-items-stretch">
-                    <div
-                      className="img align-self-stretch"
-                      style={{ backgroundImage: "url(images/staff-1.jpg)" }}
-                    />
-                  </div>
-                  <div className="text pt-3 text-center">
-                    <h3>Atty. Lloyd Wilson</h3>
-                    <span className="position mb-2">Civil Lawyer</span>
-                    <div className="faded">
-                      <p>
-                        I am an ambitious workaholic, but apart from that,
-                        pretty simple person.
-                      </p>
-                      <ul className="ftco-social text-center">
-                        <li className="ftco-animate">
-                          <a
-                            href="#"
-                            className="d-flex align-items-center justify-content-center"
-                          >
-                            <span className="fa fa-twitter" />
-                          </a>
-                        </li>
-                        <li className="ftco-animate">
-                          <a
-                            href="#"
-                            className="d-flex align-items-center justify-content-center"
-                          >
-                            <span className="fa fa-facebook" />
-                          </a>
-                        </li>
-                        <li className="ftco-animate">
-                          <a
-                            href="#"
-                            className="d-flex align-items-center justify-content-center"
-                          >
-                            <span className="fa fa-google" />
-                          </a>
-                        </li>
-                        <li className="ftco-animate">
-                          <a
-                            href="#"
-                            className="d-flex align-items-center justify-content-center"
-                          >
-                            <span className="fa fa-instagram" />
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
               {lawyers.map((lawyer: any, index: number) => {
                 const imageProps = lawyer?.image
                   ? urlForImage(lawyer?.image)
