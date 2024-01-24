@@ -53,33 +53,33 @@ export async function Footer({ settings }: { settings: any }) {
               <h2 className="ftco-heading-2">Explore</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href={`#`}>
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/contact">
                     <span className="fa fa-chevron-right mr-2" />
                     Contact
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Practice Areas
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Cases
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
-          <div className="col-sm-12 col-md">
+          {/* <div className="col-sm-12 col-md">
             <div className="ftco-footer-widget mb-4 ml-md-4">
               <h2 className="ftco-heading-2">Legal</h2>
               <ul className="list-unstyled">
@@ -109,35 +109,35 @@ export async function Footer({ settings }: { settings: any }) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div className="col-sm-12 col-md">
             <div className="ftco-footer-widget mb-4">
               <h2 className="ftco-heading-2">Company</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
                     About Us
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/blog">
                     <span className="fa fa-chevron-right mr-2" />
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/contact">
                     <span className="fa fa-chevron-right mr-2" />
                     Contact
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Careers
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
