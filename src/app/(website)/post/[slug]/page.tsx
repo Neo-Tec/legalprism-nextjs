@@ -1,3 +1,4 @@
+import DisqusComments from "@/components/disqus/disqus";
 import { getAllPostsSlugs, getLatestPost, getPostBySlug } from "@cms/client";
 import { urlForImage } from "@cms/image";
 import { PortableText } from "@cms/plugins/portabletext";
@@ -46,7 +47,7 @@ function SidePost({ post, pathPrefix }: any) {
 }
 
 export default async function EachBlog({ params }: any) {
-  const post = await getPostBySlug(params.slug);
+  const post = await getPostBySlug(params?.slug);
   const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
 
   const recent_posts = await getLatestPost({ limit: 2 });
@@ -60,12 +61,12 @@ export default async function EachBlog({ params }: any) {
         <div className="container">
           <div className="row">
             <div className="col-lg-8 ">
-              <h1 className=" mb-4 mt-2 text-center">{post.title}</h1>
+              <h1 className=" mb-4 mt-2 text-center">{post?.title}</h1>
               <div id="blog-content">
                 {imageProps && (
                   <Image
                     src={imageProps}
-                    alt={post.mainImage?.alt || "Thumbnail"}
+                    alt={post?.mainImage?.alt || "Thumbnail"}
                     loading="eager"
                     className="img-fluid mb-4"
                     quality={50}
@@ -73,6 +74,8 @@ export default async function EachBlog({ params }: any) {
                 )}
 
                 <PortableText value={post.body} />
+                <div style={{ marginTop: "100px" }}></div>
+                <DisqusComments title={post?.title} slug={post?.slug} />
               </div>
               <div className="tag-widget post-tag-container mb-5 mt-5">
                 <div className="tagcloud">
