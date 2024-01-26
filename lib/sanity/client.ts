@@ -16,6 +16,8 @@ import {
   searchquery,
   paginatedSearchQuery,
   socialsQuery,
+  allLawyersQuery,
+  getPageDataQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -105,6 +107,13 @@ export async function getAllAuthors() {
   return [];
 }
 
+export async function getAllLawyers() {
+  if (client) {
+    return (await client.fetch(allLawyersQuery)) || [];
+  }
+  return [];
+}
+
 // Category
 
 export async function getAllCategories() {
@@ -166,4 +175,14 @@ export async function getPaginatedSearchQuery(
     );
   }
   return [];
+}
+
+export async function getPageData(page: string) {
+  if (client) {
+    return await client.fetch(getPageDataQuery, {
+      page,
+    });
+  }
+
+  return {};
 }

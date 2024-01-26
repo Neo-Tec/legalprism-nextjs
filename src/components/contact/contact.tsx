@@ -3,6 +3,7 @@ export function Contact() {
     <section
       className="ftco-appointment ftco-section img"
       style={{ backgroundImage: "url(images/bg_2.jpg)" }}
+      id="contact-section"
     >
       <div className="overlay" />
       <div className="container">

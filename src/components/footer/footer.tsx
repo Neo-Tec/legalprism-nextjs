@@ -2,13 +2,13 @@ import { getSocials } from "@cms/client";
 
 export async function Footer({ settings }: { settings: any }) {
   const twitterUrl =
-    settings?.social.find((social: any) => social.media === "twitter")?.url ||
+    settings?.social?.find((social: any) => social.media === "twitter")?.url ||
     ``;
   const facebookUrl =
-    settings?.social.find((social: any) => social.media === "facebook")?.url ||
+    settings?.social?.find((social: any) => social.media === "facebook")?.url ||
     ``;
   const instagramUrl =
-    settings?.social.find((social: any) => social.media === "instagram")?.url ||
+    settings?.social?.find((social: any) => social.media === "instagram")?.url ||
     ``;
 
   const phoneNumber = settings?.phone || "+91 6394735197";
@@ -53,33 +53,33 @@ export async function Footer({ settings }: { settings: any }) {
               <h2 className="ftco-heading-2">Explore</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href={`#`}>
+                  <a href="/team">
+                    <span className="fa fa-chevron-right mr-2" />
+                    Team
+                  </a>
+                </li>
+                <li>
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
                     About
                   </a>
                 </li>
-                <li>
-                  <a href="#">
-                    <span className="fa fa-chevron-right mr-2" />
-                    Contact
-                  </a>
-                </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Practice Areas
                   </a>
-                </li>
-                <li>
+                </li> */}
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Cases
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
-          <div className="col-sm-12 col-md">
+          {/* <div className="col-sm-12 col-md">
             <div className="ftco-footer-widget mb-4 ml-md-4">
               <h2 className="ftco-heading-2">Legal</h2>
               <ul className="list-unstyled">
@@ -109,35 +109,35 @@ export async function Footer({ settings }: { settings: any }) {
                 </li>
               </ul>
             </div>
-          </div>
+          </div> */}
           <div className="col-sm-12 col-md">
             <div className="ftco-footer-widget mb-4">
               <h2 className="ftco-heading-2">Company</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="#">
+                  <a href="/team">
                     <span className="fa fa-chevron-right mr-2" />
-                    About Us
+                    Our Team
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/blog">
                     <span className="fa fa-chevron-right mr-2" />
                     Blog
                   </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
-                    Contact
+                    About
                   </a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="#">
                     <span className="fa fa-chevron-right mr-2" />
                     Careers
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
