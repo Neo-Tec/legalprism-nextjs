@@ -1,7 +1,7 @@
 import { getLatestPost } from "@cms/client";
 import { Post } from "@/components/post/post";
 
-export async function BlogSection() {
+export async function BlogSection({ data }: { data: any }) {
   const recent_post = await getLatestPost({ limit: 2 });
 
   return (

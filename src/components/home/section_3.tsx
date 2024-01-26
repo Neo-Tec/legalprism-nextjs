@@ -1,4 +1,13 @@
-export function Section3() {
+const icons_list = [
+  "flaticon-stats",
+  "flaticon-family",
+  "flaticon-handcuffs",
+  "flaticon-stay-home",
+  "flaticon-injury",
+  "flaticon-auction",
+];
+
+export function Section3({ data }: { data: any }) {
   return (
     <section className="ftco-section">
       <div className="container">
@@ -9,108 +18,27 @@ export function Section3() {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-stats" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-stats" />
-                </div>
-              </div>
-              <h2>Business Law</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-family" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-family" />
+          {data?.section_3_points?.map((data_: any, index: number) => {
+            return (
+              <div
+                key={index}
+                className="col-md-4 d-flex align-items-stretch ftco-animate"
+              >
+                <div className="services-2 text-center">
+                  <div className="icon-wrap">
+                    <div className="mini-icon d-flex align-items-center justify-content-center">
+                      <span className={icons_list[index]} />
+                    </div>
+                    <div className="icon d-flex align-items-center justify-content-center">
+                      <span className={icons_list[index]} />
+                    </div>
+                  </div>
+                  <h2>{data_?.title}</h2>
+                  <p>{data_?.description}</p>
                 </div>
               </div>
-              <h2>Family Law</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-handcuffs" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-handcuffs" />
-                </div>
-              </div>
-              <h2>Criminal Law</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-stay-home" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-stay-home" />
-                </div>
-              </div>
-              <h2>Real Estate Law</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-injury" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-injury" />
-                </div>
-              </div>
-              <h2>Personal Injury</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 d-flex align-items-stretch ftco-animate">
-            <div className="services-2 text-center">
-              <div className="icon-wrap">
-                <div className="mini-icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-auction" />
-                </div>
-                <div className="icon d-flex align-items-center justify-content-center">
-                  <span className="flaticon-auction" />
-                </div>
-              </div>
-              <h2>Judicial Law</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
-              </p>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

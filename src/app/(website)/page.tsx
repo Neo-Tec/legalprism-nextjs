@@ -4,17 +4,20 @@ import { Hero } from "@/components/home/hero";
 import { Section2 } from "@/components/home/section_2";
 import { Section3 } from "@/components/home/section_3";
 import { BlogSection } from "@/components/home/blog_section";
+import { getPageData } from "@cms/client";
 
 export default async function Home() {
+  const homepage_data = await getPageData("homepage");
+
   return (
     <div>
       {/* <Nav /> */}
       {/* END nav */}
-      <Hero />
-      <Section2 />
-      <Section3 />
-      <Contact />
-      <BlogSection />
+      <Hero data={homepage_data} />
+      <Section2 data={homepage_data} />
+      <Section3 data={homepage_data} />
+      <Contact data={homepage_data} />
+      <BlogSection data={homepage_data} />
       {/* <Footer /> */}
       {/* loader */}
       <div id="ftco-loader" className="show fullscreen">

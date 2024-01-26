@@ -1,4 +1,4 @@
-export function Hero() {
+export function Hero({ data }: { data: any }) {
   return (
     <div
       className="hero-wrap"
@@ -13,12 +13,9 @@ export function Hero() {
         >
           <div className="col-md-6 ftco-animate d-flex align-items-end">
             <div className="text w-100">
-              <h1 className="mb-4">
-                Don&#39;t Feel Helpless We Fight for Justice
-              </h1>
+              <h1 className="mb-4">{data?.intro_title || "Intro Title"}</h1>
               <p className="mb-4">
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia.
+                {data?.intro_description || "Intro Description"}
               </p>
               <p>
                 <a

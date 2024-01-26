@@ -1,4 +1,4 @@
-export function Contact() {
+export function Contact({ data }: { data: any }) {
   return (
     <section
       className="ftco-appointment ftco-section img"
