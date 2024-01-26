@@ -5,8 +5,6 @@ export default async function Contact() {
   // const settings = await getSettings();
   const about_page = await getPageData("about_page");
 
-  console.log("about_page => ", about_page);
-
   // const phoneNumber = settings?.phone || "+91 6394735197";
   // const address =
   //   settings?.address ||

@@ -1,12 +1,57 @@
 import Pagination from "@/components/pagination/pagination";
 import { Post } from "@/components/post/post";
 import { SearchBar } from "@/components/search-bar/search-bar";
-import { getPaginatedPosts, getPaginatedSearchQuery } from "@cms/client";
+import {
+  client,
+  getAllCategories,
+  getPaginatedPosts,
+  getPaginatedSearchQuery,
+} from "@cms/client";
+
+interface SearchFilter {
+  pageIndex: number;
+  limit: number;
+  query?: string;
+  category?: string;
+}
+
+async function getPosts(filter: SearchFilter) {
+  const query = `
+  *[_type == "post"  ${filter.query ? "&& _score > 0" : ""} ${
+    filter.category
+      ? `&& "${filter.category}" in categories[]->slug.current`
+      : ""
+  } ]
+    ${
+      filter.query
+        ? `| score(title match "${filter.query}" || excerpt match "${filter.query}" || pt::text(body) match "${filter.query}")
+    | order(_score desc)`
+        : `| order(publishedAt desc, _createdAt desc)`
+    }
+    [${filter.pageIndex}...${filter.limit}]
+    {
+      _score,
+      _id,
+      _createdAt,
+      mainImage,
+      categories[]->,
+      title,
+      slug
+    }
+  `;
+
+  if (client) {
+    return await client.fetch(query);
+  }
+
+  return [];
+}
 
 export default async function Blog({ searchParams }: any) {
   // Fetch the current page from the query parameters, defaulting to 1 if it doesn't exist
   const page = searchParams.page;
   const query = searchParams.query;
+  const category = searchParams.category;
   const pageIndex = parseInt(page, 10) || 1;
 
   // Set the number of posts to be displayed per page
@@ -18,13 +63,17 @@ export default async function Blog({ searchParams }: any) {
     limit: pageIndex * POSTS_PER_PAGE,
   };
 
-  const posts = query
-    ? await getPaginatedSearchQuery(params, query)
-    : await getPaginatedPosts(params);
+  // const posts = query
+  //   ? await getPaginatedSearchQuery(params, query)
+  //   : await getPaginatedPosts(params);
+
+  const posts = await getPosts({ ...params, query, category });
 
   // Check if the current page is the first or the last
   const isFirstPage = pageIndex < 2;
   const isLastPage = posts.length < POSTS_PER_PAGE;
+
+  const categories = await getAllCategories();
 
   return (
     <>
@@ -56,7 +105,11 @@ export default async function Blog({ searchParams }: any) {
         </section>
         <section className="ftco-section">
           <div className="container">
-            <SearchBar query={query} />
+            <SearchBar
+              query={query}
+              categories={categories}
+              currentCategory={category}
+            />
             <div className="row d-flex ">
               {posts.map((post: any) => (
                 <Post key={post._id} post={post} />

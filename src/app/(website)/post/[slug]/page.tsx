@@ -67,9 +67,7 @@ export default async function EachBlog({ params }: any) {
   const imageProps = post?.mainImage ? urlForImage(post?.mainImage) : null;
 
   const recent_posts = await getLatestPost({ limit: 2 });
-  const tags = post?.categories?.map(
-    (category: any) => category?.slug?.current
-  );
+  const tags = post?.categories;
 
   return (
     <>
@@ -97,11 +95,11 @@ export default async function EachBlog({ params }: any) {
                 <div className="tagcloud">
                   {tags?.map((tag: any, index: number) => (
                     <a
-                      key={`${tag}_${index}`}
-                      href="#"
+                      key={`${tag?.slug?.current}_${index}`}
+                      href={`/blog/?category=${tag?.slug?.current}`}
                       className="tag-cloud-link"
                     >
-                      {tag}
+                      {tag?.name}
                     </a>
                   ))}
                 </div>
@@ -120,11 +118,11 @@ export default async function EachBlog({ params }: any) {
                 <div className="tagcloud">
                   {tags?.map((tag: any, index: number) => (
                     <a
-                      key={`${tag}_${index}`}
-                      href="#"
+                      key={`${tag?.slug?.current}_${index}`}
+                      href={`/blog/?category=${tag?.slug?.current}`}
                       className="tag-cloud-link"
                     >
-                      {tag}
+                      {tag?.name}
                     </a>
                   ))}
                 </div>
