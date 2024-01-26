@@ -1,3 +1,5 @@
+const icons_list = ["flaticon-medal", "flaticon-auction", "flaticon-lawyer"];
+
 export function Contact({ data }: { data: any }) {
   return (
     <section
@@ -10,60 +12,29 @@ export function Contact({ data }: { data: any }) {
         <div className="row">
           <div className="col-md-6 pr-md-5">
             <div className="heading-section heading-section-white">
-              <h2 className="mb-3">We Have Great Results</h2>
-              <p>
-                A small river named Duden flows by their place and supplies it
-                with the necessary regelialia. It is a paradisematic country, in
-                which roasted parts of sentences fly into your mouth.
-              </p>
+              <h2 className="mb-3">{data?.section_4_heading || "Heading"}</h2>
+              <p>{data?.section_4_description || "Description"}</p>
               <div className="row mt-md-4">
-                <div className="col-lg-6">
-                  <div className="services d-flex w-100">
-                    <div className="icon icon-2 d-flex align-items-center justify-content-center">
-                      <span className="flaticon-medal" />
+                {data?.section_4_points?.map((data_: any, index: number) => {
+                  return (
+                    <div key={index} className="col-lg-6">
+                      <div className="services d-flex w-100">
+                        <div className="icon icon-2 d-flex align-items-center justify-content-center">
+                          <span className={icons_list[index]} />
+                        </div>
+                        <div className="text pl-3">
+                          <h2>{data_?.title}</h2>
+                          <p>{data_?.description}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div className="text pl-3">
-                      <h2>Award Winning</h2>
-                      <p>
-                        A small river named Duden flows by their place and
-                        supplies
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="services d-flex w-100">
-                    <div className="icon icon-2 d-flex align-items-center justify-content-center">
-                      <span className="flaticon-auction" />
-                    </div>
-                    <div className="text pl-3">
-                      <h2>60 Years of Experience</h2>
-                      <p>
-                        A small river named Duden flows by their place and
-                        supplies
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-12">
-                  <div className="services d-flex w-100">
-                    <div className="icon icon-2 d-flex align-items-center justify-content-center">
-                      <span className="flaticon-lawyer" />
-                    </div>
-                    <div className="text pl-3">
-                      <h2>Best Attorneys team</h2>
-                      <p>
-                        A small river named Duden flows by their place and
-                        supplies
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
             </div>
           </div>
           <div className="col-md-6 half ftco-animate">
-            <h2 className="mb-4">Free Case Consultation</h2>
+            <h2 className="mb-4">{data?.section_4_formname}</h2>
             <form
               name="Contact Me"
               className="appointment"
@@ -107,12 +78,15 @@ export function Contact({ data }: { data: any }) {
                           className="form-control"
                         >
                           <option value={""}>Practice Areas</option>
-                          <option value={""}>Business Law</option>
-                          <option value={""}>Criminal Law</option>
-                          <option value={""}>Family Law</option>
-                          <option value={""}>Judicial Law</option>
-                          <option value={""}>Personal Injury</option>
-                          <option value={""}>Real Estate Law</option>
+                          {data?.practice_areas?.map(
+                            (area: any, index: number) => {
+                              return (
+                                <option key={index} value={area}>
+                                  {area}
+                                </option>
+                              );
+                            }
+                          )}
                         </select>
                       </div>
                     </div>
