@@ -1,15 +1,17 @@
 "use client";
 
 import { DiscussionEmbed } from "disqus-react";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 function DisqusComments({ title, slug }: any) {
-  const pageUrl = typeof window !== "undefined" ? window.location.href : "";
+  const pathname = usePathname();
   const disqusConfig = {
-    url: pageUrl,
-    identifier: slug,
+    url: `https://legalprism.in${pathname}`,
+    identifier: slug?.current,
     title: title,
   };
+  console.log("discus config => ", disqusConfig);
   return <DiscussionEmbed shortname="legalprism" config={disqusConfig} />;
 }
 

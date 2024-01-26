@@ -3,6 +3,6 @@ import category from "./category";
 import post from "./post";
 import author from "./author";
 import settings from "./settings";
-import lawyers from "./lawyers";
+import team from "./team";
 
-export const schemaTypes = [post, category, settings, blockContent, lawyers];
+export const schemaTypes = [post, category, settings, blockContent, team];

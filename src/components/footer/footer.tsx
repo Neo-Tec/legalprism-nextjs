@@ -53,15 +53,15 @@ export async function Footer({ settings }: { settings: any }) {
               <h2 className="ftco-heading-2">Explore</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="/about">
+                  <a href="/team">
                     <span className="fa fa-chevron-right mr-2" />
-                    About
+                    Team
                   </a>
                 </li>
                 <li>
-                  <a href="/contact">
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
-                    Contact
+                    About
                   </a>
                 </li>
                 {/* <li>
@@ -115,9 +115,9 @@ export async function Footer({ settings }: { settings: any }) {
               <h2 className="ftco-heading-2">Company</h2>
               <ul className="list-unstyled">
                 <li>
-                  <a href="/about">
+                  <a href="/team">
                     <span className="fa fa-chevron-right mr-2" />
-                    About Us
+                    Our Team
                   </a>
                 </li>
                 <li>
@@ -127,9 +127,9 @@ export async function Footer({ settings }: { settings: any }) {
                   </a>
                 </li>
                 <li>
-                  <a href="/contact">
+                  <a href="/about">
                     <span className="fa fa-chevron-right mr-2" />
-                    Contact
+                    About
                   </a>
                 </li>
                 {/* <li>

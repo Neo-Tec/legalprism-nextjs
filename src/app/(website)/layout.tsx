@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-script-component-in-head */
 import "../../styles/scss/style.scss";
 
 import { Footer } from "@/components/footer/footer";
@@ -5,6 +6,7 @@ import { Nav } from "@/components/nav/nav";
 import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import { getSettings } from "@cms/client";
 import { urlForImage } from "@cms/image";
+import Head from "next/head";
 import Script from "next/script";
 
 async function sharedMetaData(params: any) {
@@ -55,12 +57,6 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>Legal Prism</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-
         <link
           href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           rel="stylesheet"
@@ -97,6 +93,14 @@ export default async function RootLayout({
 
         <GoogleAnalytics measurementId="G-89N7FSPHWT" />
       </head>
+      <Head>
+        <title>Legal Prism</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+      </Head>
+
       <body>
         <Nav settings={settings} />
         {children}

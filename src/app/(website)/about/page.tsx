@@ -1,8 +1,14 @@
-import { getAllLawyers } from "@cms/client";
-import { urlForImage } from "@cms/image";
+import { getSettings } from "@cms/client";
+import Link from "next/link";
 
-export default async function About() {
-  const lawyers = await getAllLawyers();
+export default async function Contact() {
+  const settings = await getSettings();
+
+  const phoneNumber = settings?.phone || "+91 6394735197";
+  const address =
+    settings?.address ||
+    "203 Fake St. Mountain View, San Francisco, California, USA";
+  const email = settings?.email || "blog.legalprism@gmail.com";
 
   return (
     <>
@@ -22,87 +28,151 @@ export default async function About() {
                       Home <i className="fa fa-chevron-right" />
                     </a>
                   </span>
-                  About
+                  Contact{" "}
                   <span>
                     <i className="fa fa-chevron-right" />
                   </span>
                 </p>
-                <h1 className="mb-0 bread">Our Qualified Lawyer</h1>
+                <h1 className="mb-0 bread">Contact Us</h1>
               </div>
             </div>
           </div>
         </section>
-        <section className="ftco-section">
+        <section className="ftco-section bg-light">
           <div className="container">
-            <div className="row">
-              {lawyers.map((lawyer: any, index: number) => {
-                const imageProps = lawyer?.image
-                  ? urlForImage(lawyer?.image)
-                  : null;
-
-                const socials: any = {};
-                lawyer?.social?.forEach((social: any) => {
-                  socials[social.media as string] = social.url;
-                });
-
-                return (
-                  <div key={index} className="col-md-6 col-lg-3 ftco-animate">
-                    <div className="staff">
-                      <div className="img-wrap d-flex align-items-stretch">
-                        <div
-                          className="img align-self-stretch"
-                          style={{
-                            backgroundImage: `url("${imageProps?.src}")`,
-                          }}
-                        />
+            <div className="row justify-content-center">
+              <div className="col-md-12">
+                <div className="wrapper px-md-4">
+                  <div className="row mb-5">
+                    <div className="col-md-3">
+                      <div className="dbox w-100 text-center">
+                        <div className="icon d-flex align-items-center justify-content-center">
+                          <span className="fa fa-map-marker" />
+                        </div>
+                        <div className="text">
+                          <p>
+                            <span>Address:</span> {address}
+                          </p>
+                        </div>
                       </div>
-                      <div className="text pt-3 text-center">
-                        <h3>{lawyer?.name}</h3>
-                        <span className="position mb-2">
-                          {lawyer?.job_title}
-                        </span>
-                        <div className="faded">
-                          <p>{lawyer?.bio}</p>
-                          <ul className="ftco-social text-center">
-                            <li className="ftco-animate">
-                              <a
-                                href={`${socials.twitter}` || "#"}
-                                className="d-flex align-items-center justify-content-center"
-                              >
-                                <span className="fa fa-twitter" />
-                              </a>
-                            </li>
-                            <li className="ftco-animate">
-                              <a
-                                href={socials.facebook || "#"}
-                                className="d-flex align-items-center justify-content-center"
-                              >
-                                <span className="fa fa-facebook" />
-                              </a>
-                            </li>
-                            <li className="ftco-animate">
-                              <a
-                                href={socials.linkedin || "#"}
-                                className="d-flex align-items-center justify-content-center"
-                              >
-                                <span className="fa fa-linkedin" />
-                              </a>
-                            </li>
-                            <li className="ftco-animate">
-                              <a
-                                href={socials.instagram || "#"}
-                                className="d-flex align-items-center justify-content-center"
-                              >
-                                <span className="fa fa-instagram" />
-                              </a>
-                            </li>
-                          </ul>
+                    </div>
+                    <div className="col-md-3">
+                      <div className="dbox w-100 text-center">
+                        <div className="icon d-flex align-items-center justify-content-center">
+                          <span className="fa fa-phone" />
+                        </div>
+                        <div className="text">
+                          <p>
+                            <span>Phone:</span>{" "}
+                            <a href="tel://1234567920">{phoneNumber}</a>
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-3">
+                      <div className="dbox w-100 text-center">
+                        <div className="icon d-flex align-items-center justify-content-center">
+                          <span className="fa fa-paper-plane" />
+                        </div>
+                        <div className="text">
+                          <p>
+                            <span>Email:</span>{" "}
+                            <a href="mailto:info@yoursite.com">{email}</a>
+                          </p>
                         </div>
                       </div>
                     </div>
                   </div>
-                );
-              })}
+                  <div className="row no-gutters">
+                    <div className="col-md-7">
+                      <div className="contact-wrap w-100 p-md-5 p-4">
+                        <h3 className="mb-4">Contact Us</h3>
+                        <form
+                          method="POST"
+                          id="contactForm"
+                          name="contactForm"
+                          className="contactForm"
+                          action="https://formspree.io/f/xbjndgrv"
+                        >
+                          <div className="row">
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label className="label" htmlFor="name">
+                                  Full Name
+                                </label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  name="name"
+                                  id="name"
+                                  placeholder="Name"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-6">
+                              <div className="form-group">
+                                <label className="label" htmlFor="email">
+                                  Email Address
+                                </label>
+                                <input
+                                  type="email"
+                                  className="form-control"
+                                  name="email"
+                                  id="email"
+                                  placeholder="Email"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-12">
+                              <div className="form-group">
+                                <label className="label" htmlFor="subject">
+                                  Subject
+                                </label>
+                                <input
+                                  type="text"
+                                  className="form-control"
+                                  name="subject"
+                                  id="subject"
+                                  placeholder="Subject"
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-12">
+                              <div className="form-group">
+                                <label className="label" htmlFor="#">
+                                  Message
+                                </label>
+                                <textarea
+                                  name="message"
+                                  className="form-control"
+                                  id="message"
+                                  cols={30}
+                                  rows={4}
+                                  placeholder="Message"
+                                  defaultValue={""}
+                                />
+                              </div>
+                            </div>
+                            <div className="col-md-12">
+                              <div className="form-group">
+                                <input
+                                  type="submit"
+                                  defaultValue="Send Message"
+                                  className="btn btn-primary"
+                                />
+                                <div className="submitting" />
+                              </div>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div className="col-md-5 order-md-first d-flex align-items-stretch">
+                      <div id="map" className="map" />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
