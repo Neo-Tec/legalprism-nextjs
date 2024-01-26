@@ -3,6 +3,7 @@ import { getAllPostsSlugs, getLatestPost, getPostBySlug } from "@cms/client";
 import { urlForImage } from "@cms/image";
 import { PortableText } from "@cms/plugins/portabletext";
 import { format, parseISO } from "date-fns";
+import { Metadata } from "next";
 
 import Image from "next/image";
 
@@ -10,9 +11,24 @@ export async function generateStaticParams() {
   return await getAllPostsSlugs();
 }
 
-export async function generateMetadata({ params }: any) {
+export async function generateMetadata({ params }: any): Promise<Metadata> {
   const post = await getPostBySlug(params.slug);
-  return { title: post.title };
+  const imageUrl = urlForImage(post.mainImage)?.src;
+  return {
+    title: post?.title,
+    description: post?.excerpt,
+    openGraph: {
+      title: post?.title,
+      images: [
+        {
+          url: imageUrl as unknown as string,
+          width: 800,
+          height: 600,
+        },
+      ],
+      description: post?.excerpt,
+    },
+  };
 }
 
 function SidePost({ post, pathPrefix }: any) {
