@@ -39,3 +39,6 @@ next-env.d.ts
 .sanity
 
 .env
+
+# Local Netlify folder
+.netlify

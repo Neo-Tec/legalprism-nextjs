@@ -11,7 +11,6 @@ function DisqusComments({ title, slug }: any) {
     identifier: slug?.current,
     title: title,
   };
-  console.log("discus config => ", disqusConfig);
   return <DiscussionEmbed shortname="legalprism" config={disqusConfig} />;
 }
 
