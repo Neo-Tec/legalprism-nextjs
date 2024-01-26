@@ -13,8 +13,8 @@ export function Nav({ settings }: { settings: any }) {
     settings?.social?.find((social: any) => social.media === "facebook")?.url ||
     ``;
   const instagramUrl =
-    settings?.social?.find((social: any) => social.media === "instagram")?.url ||
-    ``;
+    settings?.social?.find((social: any) => social.media === "instagram")
+      ?.url || ``;
 
   const phoneNumber = settings?.phone || "+91 6394735197";
   const address =
