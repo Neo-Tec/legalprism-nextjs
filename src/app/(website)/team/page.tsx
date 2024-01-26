@@ -1,8 +1,9 @@
-import { getAllLawyers } from "@cms/client";
+import { getAllLawyers, getPageData } from "@cms/client";
 import { urlForImage } from "@cms/image";
 
-export default async function About() {
+export default async function Team() {
   const lawyers = await getAllLawyers();
+  const team_page = await getPageData("team_page");
 
   return (
     <>
@@ -27,7 +28,7 @@ export default async function About() {
                     <i className="fa fa-chevron-right" />
                   </span>
                 </p>
-                <h1 className="mb-0 bread">Our Qualified Lawyer</h1>
+                <h1 className="mb-0 bread">{team_page?.title}</h1>
               </div>
             </div>
           </div>

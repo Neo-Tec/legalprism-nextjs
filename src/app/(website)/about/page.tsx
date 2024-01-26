@@ -1,14 +1,17 @@
-import { getSettings } from "@cms/client";
+import { getPageData, getSettings } from "@cms/client";
 import Link from "next/link";
 
 export default async function Contact() {
-  const settings = await getSettings();
+  // const settings = await getSettings();
+  const about_page = await getPageData("about_page");
 
-  const phoneNumber = settings?.phone || "+91 6394735197";
-  const address =
-    settings?.address ||
-    "203 Fake St. Mountain View, San Francisco, California, USA";
-  const email = settings?.email || "blog.legalprism@gmail.com";
+  console.log("about_page => ", about_page);
+
+  // const phoneNumber = settings?.phone || "+91 6394735197";
+  // const address =
+  //   settings?.address ||
+  //   "203 Fake St. Mountain View, San Francisco, California, USA";
+  // const email = settings?.email || "blog.legalprism@gmail.com";
 
   return (
     <>
@@ -28,12 +31,12 @@ export default async function Contact() {
                       Home <i className="fa fa-chevron-right" />
                     </a>
                   </span>
-                  Contact{" "}
+                  About{" "}
                   <span>
                     <i className="fa fa-chevron-right" />
                   </span>
                 </p>
-                <h1 className="mb-0 bread">Contact Us</h1>
+                <h1 className="mb-0 bread">{about_page?.title}</h1>
               </div>
             </div>
           </div>
@@ -43,7 +46,7 @@ export default async function Contact() {
             <div className="row justify-content-center">
               <div className="col-md-12">
                 <div className="wrapper px-md-4">
-                  <div className="row mb-5">
+                  {/* <div className="row mb-5">
                     <div className="col-md-3">
                       <div className="dbox w-100 text-center">
                         <div className="icon d-flex align-items-center justify-content-center">
@@ -82,11 +85,11 @@ export default async function Contact() {
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className="row no-gutters">
+                  </div> */}
+                  {/* <div className="row no-gutters">
                     <div className="col-md-7">
                       <div className="contact-wrap w-100 p-md-5 p-4">
-                        <h3 className="mb-4">Contact Us</h3>
+                        <h3 className="mb-4">About Us</h3>
                         <form
                           method="POST"
                           id="contactForm"
@@ -170,6 +173,10 @@ export default async function Contact() {
                     <div className="col-md-5 order-md-first d-flex align-items-stretch">
                       <div id="map" className="map" />
                     </div>
+                  </div> */}
+                  <div className="heading-section">
+                    <h2 className="mb-3">{about_page?.heading}</h2>
+                    <p>{about_page?.description}</p>
                   </div>
                 </div>
               </div>

@@ -131,19 +131,17 @@ export function Nav({ settings }: { settings: any }) {
                 </a>
               </li>
               <li
-                className={`nav-item ${
-                  pathname === "/about" ? "active" : ""
-                }`}
+                className={`nav-item ${pathname === "/team" ? "active" : ""}`}
               >
-                <a href="/about" className="nav-link">
-                  About
+                <a href="/team" className="nav-link">
+                  Team
                 </a>
               </li>
               <li
                 className={`nav-item ${pathname === "/about" ? "active" : ""}`}
               >
-                <a href="/team" className="nav-link">
-                  Team
+                <a href="/about" className="nav-link">
+                  About
                 </a>
               </li>
             </ul>
