@@ -8,7 +8,7 @@ export function Post({ post, pathPrefix }: any) {
     parseISO(post?.publishedAt || post._createdAt),
     "dd MMMM yyyy"
   ).split(" ");
-  const blogLink = `post/${pathPrefix ? `${pathPrefix}/` : ""}${
+  const blogLink = `/post/${pathPrefix ? `${pathPrefix}/` : ""}${
     post.slug.current
   }`;
 
