@@ -13,8 +13,8 @@ export function Section3({ data }: { data: any }) {
       <div className="container">
         <div className="row justify-content-center pb-5">
           <div className="col-md-7 heading-section text-center ftco-animate">
-            <span className="subheading">Practice Area</span>
-            <h2>What We Cover</h2>
+            <span className="subheading">{data?.section_3_subheading}</span>
+            <h2>{data?.section_3_heading}</h2>
           </div>
         </div>
         <div className="row">
