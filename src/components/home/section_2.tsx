@@ -123,7 +123,7 @@ export function Section2({ data }: { data: any }) {
                     <div className="block-18 py-4 w-100">
                       <span className="icon flaticon-checklist" />
                       <div className="text align-items-center">
-                        <strong className="number" data-number={3000}>
+                        <strong className="number" data-number={data_?.count}>
                           {data_?.count}
                         </strong>
                         <span>{data_?.title}</span>
