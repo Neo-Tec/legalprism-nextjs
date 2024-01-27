@@ -170,12 +170,12 @@ export async function Footer({ settings }: { settings: any }) {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <p className="mb-0" style={{ color: "rgba(255,255,255,.5)" }}>
+              {/* <p className="mb-0" style={{ color: "rgba(255,255,255,.5)" }}>
                 This website is made by{" "}
                 <a href="https://artaza.in" target="_blank">
                   CyberPlanet Agency
                 </a>
-              </p>
+              </p> */}
             </div>
           </div>
         </div>
